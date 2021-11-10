@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue!</title>
+  <style>
+    .rosso{
+      color: red;
+    }
+    .blu{
+      color:blue
+    }
+  </style>
+</head>
+<body>
+
+  <!-- app è il contenitore globale di vue -->
+  <div id="app">
+
+    <input v-model="messaggio" type="text">
+    <input v-model="nome" type="text">
+    <input v-model="miaClasse" type="text" @keyup="funzioneChiamataDaKeyUp">
+    <h1> {{messaggio}} {{nome}}</h1>
+    <h2 v-bind:class="miaClasse">{{nome}}</h2>
+    <h3 :class="miaClasse">{{nome}}</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tenetur tempore quod ab sapiente. Saepe, sunt quaerat repellendus tempore recusandae <strong>{{nome}}</strong> earum, obcaecati, temporibus consequuntur iure sequi totam maxime numquam nemo!</p>
+    <button @click="funzioneEstesa">funzione estesa</button><br>
+    <button @click="funzioneCompatta">funzione compatta (preferibile)</button><br>
+    <button @click="arrowFunction">funzione => (da evitare per il problema del this) </button><br>
+    <button @click="coloraRosso">colora rosso</button><br>
+    <button @click="coloraBlu">colora blu</button><br>
+    <button @click="coloraClasse('rosso')">colora rosso</button><br>
+    <button @click="coloraClasse('blu')">colora blu</button><br>
+ 
+  </div>
+
+  
+  
+
+  <!-- importo la CDN di Vue  -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- mio codice -->
+  <script src="js/script.js"></script>
+</body>
+</html>
