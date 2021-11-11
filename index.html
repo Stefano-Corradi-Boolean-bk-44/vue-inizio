@@ -12,6 +12,15 @@
     .blu{
       color:blue
     }
+    .maiuscolo{
+      text-transform: uppercase;
+    }
+    .corsivo{
+      font-style: italic;
+    }
+    .grassetto{
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -33,6 +42,53 @@
     <button @click="coloraBlu">colora blu</button><br>
     <button @click="coloraClasse('rosso')">colora rosso</button><br>
     <button @click="coloraClasse('blu')">colora blu</button><br>
+    // gestione compatta per elemnti toggle -> booleano = al suo contrario
+    <button @click="isUpper = !isUpper">MAIUSCOLO</button><br>
+    <button @click="isItalic = !isItalic">corsivo</button><br>
+    <p :class="{maiuscolo: isUpper, corsivo: isItalic}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis ea iure, perferendis ad sed facere magnam accusantium. Molestias error esse nobis sequi ex ipsum expedita tenetur quos iusto aperiam?</p>
+    <button @click="altraClasse = 'grassetto'">grassetto</button><br>
+
+    <!--
+      // se ho più classi dinamimiche le inserisco nelle quadre[unaClasse, altraClasse]
+    // se ho delle classi da gestire con delle condizioni true/false le scrivo dentro le graffe {classeCss: condizione, altroCss, altraCondizione, ecc}
+    // posso cmpbinare entrambe le cose
+    // [unaClasse, altraClasse, {classeCss: condizione, altroCss, altraCondizione, ecc}]
+     -->
+    <p 
+    :class="[altraClasse, miaClasse, {maiuscolo: isUpper, corsivo: isItalic}]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis ea iure, perferendis ad sed facere magnam accusantium. Molestias error esse nobis sequi ex ipsum expedita tenetur quos iusto aperiam?</p>
+    <button @click="mostraTitolo = !mostraTitolo">mostra/nascondi titolo</button><br>
+    <h3 v-if="mostraTitolo" >Titolo da mostrare con v-if se true</h3>
+    <h3 v-else >Appaio se false</h3>
+    <h3 v-show="mostraTitolo" >Titolo da mostrare con v-show se true</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum obcaecati pariatur ratione veniam voluptatibus, accusantium incidunt sint sunt tempora praesentium? Earum fugiat suscipit pariatur voluptatem maiores ipsa vel mollitia ea!</p>
+
+    <!-- v-for -> elemntoCiclato in array -->
+    <h2>Nomi</h2>
+    <ul>
+      <li v-for="nome in nomi">{{nome}}</li>
+    </ul>
+
+    <h2>Film</h2>
+    <ul>
+      <li v-for="film in films" >
+        {{film.titolo}} - durata: {{film.durata}}
+      </li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Titolo Film</th>
+          <th>durata</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="film in films">
+          <td :class="miaClasse">{{film.titolo}}</td>
+          <td>{{film.durata}}</td>
+        </tr>
+      </tbody>
+    </table>
  
   </div>
 

@@ -9,7 +9,26 @@ const app = new Vue({
     nome: 'Ugo de Ughi',
     messaggio: 'Buongiorno!',
     miaClasse: '',
-    counter:0
+    counter:0,
+    isUpper: false,
+    isItalic: false,
+    altraClasse:'',
+    mostraTitolo: true,
+    nomi:['Ugo','Giuseppe','Martina','Anna'],
+    films:[
+      {
+        titolo: 'Ritono al Futuro',
+        durata: '2 ore 10 min'
+      },
+      {
+        titolo: 'The Matrix',
+        durata: '3 ore 30 min'
+      },
+      {
+        titolo: 'C\'era una volta in America',
+        durata: '4 ore'
+      },
+    ]
   },
   methods:{
     funzioneEstesa: function(){
