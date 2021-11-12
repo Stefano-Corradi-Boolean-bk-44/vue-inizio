@@ -9,10 +9,10 @@
     .rosso{
       color: red;
     }
-    .blu{
+    .colore-blu{
       color:blue
     }
-    .maiuscolo{
+    .mio-maiuscolo{
       text-transform: uppercase;
     }
     .corsivo{
@@ -45,7 +45,7 @@
     // gestione compatta per elemnti toggle -> booleano = al suo contrario
     <button @click="isUpper = !isUpper">MAIUSCOLO</button><br>
     <button @click="isItalic = !isItalic">corsivo</button><br>
-    <p :class="{maiuscolo: isUpper, corsivo: isItalic}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis ea iure, perferendis ad sed facere magnam accusantium. Molestias error esse nobis sequi ex ipsum expedita tenetur quos iusto aperiam?</p>
+    <p :class="{'mio-maiuscolo': isUpper, corsivo: isItalic}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis ea iure, perferendis ad sed facere magnam accusantium. Molestias error esse nobis sequi ex ipsum expedita tenetur quos iusto aperiam?</p>
     <button @click="altraClasse = 'grassetto'">grassetto</button><br>
 
     <!--
@@ -55,7 +55,7 @@
     // [unaClasse, altraClasse, {classeCss: condizione, altroCss, altraCondizione, ecc}]
      -->
     <p 
-    :class="[altraClasse, miaClasse, {maiuscolo: isUpper, corsivo: isItalic}]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis ea iure, perferendis ad sed facere magnam accusantium. Molestias error esse nobis sequi ex ipsum expedita tenetur quos iusto aperiam?</p>
+    :class="[altraClasse, miaClasse, {'mio-maiuscolo': isUpper, corsivo: isItalic}]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi quis ea iure, perferendis ad sed facere magnam accusantium. Molestias error esse nobis sequi ex ipsum expedita tenetur quos iusto aperiam?</p>
     <button @click="mostraTitolo = !mostraTitolo">mostra/nascondi titolo</button><br>
     <h3 v-if="mostraTitolo" >Titolo da mostrare con v-if se true</h3>
     <h3 v-else >Appaio se false</h3>

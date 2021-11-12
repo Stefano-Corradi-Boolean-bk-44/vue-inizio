@@ -8,7 +8,7 @@ const app = new Vue({
   data: {
     nome: 'Ugo de Ughi',
     messaggio: 'Buongiorno!',
-    miaClasse: '',
+    miaClasse: 'colore-blu',
     counter:0,
     isUpper: false,
     isItalic: false,
